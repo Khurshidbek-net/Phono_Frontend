@@ -1,10 +1,10 @@
-import { HomePage } from "../app";
+import { AuthPage } from "../app";
 
-export default function Home() {
+export default function Auth() {
   return (
     <div>
       <main>
-        <HomePage/>
+        <AuthPage />
       </main>
     </div>
   );

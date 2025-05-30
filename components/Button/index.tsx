@@ -1,5 +1,3 @@
-
-
 import React, { FC } from 'react'
 import { ButtonWrapper } from './Button.style';
 
@@ -16,4 +14,4 @@ const Button: FC<ButtonProps> = (props) => {
   )
 }
 
-export default Button
+export default Button;
