@@ -16,13 +16,18 @@ export const FooterWrapper = styled.div`
     border-top: 1px solid #999CA0;
     margin-bottom: 20px;
   }
+
+  .footer-content {
+    display: flex;
+    gap: 40px;
+  }
 `
 
 export const FooterParagrifWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: auto;
 
   & > p {
     color: #4E46B4;
@@ -38,7 +43,6 @@ export const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 40px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -67,6 +71,7 @@ export const FooterLink = styled.a`
 
 export const AppStoreButton = styled.div`
   margin-top: 20px;
+  margin-left: auto;
   cursor: pointer;
 `
 
@@ -88,8 +93,16 @@ export const AppStoreImage = styled.div`
 
 export const SocialIcons = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 12px;
   margin-top: 20px;
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
 `
 
 export const SocialIcon = styled.a`
