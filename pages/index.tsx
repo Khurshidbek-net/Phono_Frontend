@@ -1,11 +1,8 @@
+import React from "react";
 import { HomePage } from "../app";
 
-export default function Home() {
-  return (
-    <div>
-      <main>
-        <HomePage/>
-      </main>
-    </div>
-  );
+function Home() {
+  return <HomePage />;
 }
+
+export default Home;

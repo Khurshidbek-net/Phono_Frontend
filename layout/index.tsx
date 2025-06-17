@@ -1,7 +1,7 @@
-import React, { FC } from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
-import { MainLayoutWrapper } from './MainLayout.style';
+import React, { FC } from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { MainLayoutWrapper } from "./MainLayout.style";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -9,13 +9,11 @@ interface MainLayoutProps {
 const MainLayout: FC<MainLayoutProps> = (props) => {
   return (
     <MainLayoutWrapper>
-      <div>
-        <Navbar />
-        {props.children}
-      </div>
+      <Navbar />
+      <div>{props.children}</div>
       <Footer />
     </MainLayoutWrapper>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;
