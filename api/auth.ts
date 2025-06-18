@@ -11,3 +11,8 @@ export const register = async (name: string, phoneNumber: string, password: stri
   const response = await axios.post(`${API_BASE_URL}/auth/signup`, { name, phoneNumber, password });
   return response.data;
 };
+
+export const signOut = async () => {
+  const response = await axios.post(`${API_BASE_URL}/auth/signout`);
+  return response.data;
+};

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import styled from "styled-components"
 import { ChevronDown, ChevronUp, Plus, Trash2, User, LogOut, X } from "lucide-react"
+import { useAuth } from "../../contexts/AuthContext"
 
 // Styled Components
 const Container = styled.div`
@@ -514,6 +515,7 @@ export default function ProfileSettingsStyled() {
   const [userData, setUserData] = useState<UserData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const { logout } = useAuth()
 
   const [openSections, setOpenSections] = useState({
     phone: true,
@@ -978,9 +980,8 @@ export default function ProfileSettingsStyled() {
             <DialogButton
               variant="primary"
               onClick={() => {
-                localStorage.removeItem("user")
+                logout()
                 setLogoutDialogOpen(false)
-                window.location.reload()
               }}
             >
               Выйти

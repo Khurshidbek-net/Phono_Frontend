@@ -60,6 +60,8 @@ const ProductDetail = () => {
   const { data: phones2 } = useGetAllPhones();
   const router = useRouter();
 
+  console.log("Phone Data:", phoneData);
+
   // console.log(phoneData)
 
   useEffect(() => {

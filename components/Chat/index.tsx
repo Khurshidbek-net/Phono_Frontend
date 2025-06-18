@@ -42,7 +42,7 @@ export default function ChatModal({ isOpen, onClose, productOwner, product }: Ch
       setMessages([
         {
           id: 1,
-          text: `Hi! I'm ${productOwner.firstName}, the product owner for ${product.name}. How can I help you today?`,
+          text: `Hi! I'm ${productOwner?.firstName}, the product owner for ${product.name}. How can I help you today?`,
           isUser: false,
           timestamp: new Date(),
         },

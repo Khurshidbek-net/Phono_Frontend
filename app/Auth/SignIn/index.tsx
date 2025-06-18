@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { useAuth } from "../../../hooks/useAuth";
+import { useAuth as useAuthHook } from "../../../hooks/useAuth";
+import { useAuth } from "../../../contexts/AuthContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
@@ -18,7 +19,8 @@ function SignIn({ switchToRegister }: { switchToRegister: () => void }) {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { signIn, loading } = useAuth();
+  const { signIn, loading } = useAuthHook();
+  const { login } = useAuth();
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -39,10 +41,11 @@ function SignIn({ switchToRegister }: { switchToRegister: () => void }) {
       console.log("Login muvaffaqiyatli");
       console.log(user);
 
-      localStorage.setItem("user", JSON.stringify({
+      // Use the authentication context to login
+      login({
         id: user.id,
         accessToken: user.access_token,
-      }));
+      });
       
       toast.success("Вход выполнен успешно!");
       router.push("/");
@@ -52,6 +55,11 @@ function SignIn({ switchToRegister }: { switchToRegister: () => void }) {
         err.response?.data?.message?.message || "Неверный номер телефона или пароль.";
       toast.error(errorMessage);
     }
+  };
+
+  const handlePhoneSelect = (phone: string) => {
+    setPhoneNumber(phone);
+    localStorage.setItem("selectedPhoneNumber", phone);
   };
 
   return (

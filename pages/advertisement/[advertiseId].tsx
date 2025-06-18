@@ -1,9 +1,12 @@
 import AdvertisementOne from "../../app/updateAdvertisement";
+import ProtectedRoute from "../../components/ProtectedRoute";
 
 export default function AdvertiseIdPage() {
   return (
-    <main>
-      <AdvertisementOne/>
-    </main>
+    <ProtectedRoute>
+      <main>
+        <AdvertisementOne/>
+      </main>
+    </ProtectedRoute>
   );
 }

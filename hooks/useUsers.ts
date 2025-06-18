@@ -58,10 +58,10 @@ interface Language {
   updatedAt: string;
 }
 
-export const useUserById = (id: number) => {
+export const useUserById = (id: number | null) => {
   return useQuery<User>({
     queryKey: ["user", id],
-    queryFn: () => getUserById(id),
+    queryFn: () => getUserById(id!),
     enabled: !!id,
   });
 };

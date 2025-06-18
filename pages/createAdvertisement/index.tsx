@@ -1,9 +1,12 @@
 import Advertisement from "../../app/advertisement";
+import ProtectedRoute from "../../components/ProtectedRoute";
 
 export default function CreateAdvertisePage() {
   return (
-    <main>
-      <Advertisement/>
-    </main>
+    <ProtectedRoute>
+      <main>
+        <Advertisement/>
+      </main>
+    </ProtectedRoute>
   );
 }
