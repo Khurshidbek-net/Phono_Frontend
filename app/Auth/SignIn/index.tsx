@@ -14,6 +14,7 @@ import {
   Title,
   Description,
 } from "./SignIn.style";
+import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 
 function SignIn({ switchToRegister }: { switchToRegister: () => void }) {
   const [phoneNumber, setPhoneNumber] = useState("");

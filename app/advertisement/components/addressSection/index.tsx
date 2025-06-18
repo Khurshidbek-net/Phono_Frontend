@@ -5,7 +5,8 @@ import {
   TabWrapper,
 } from "./addressSection.style";
 import { useDistrict, useRegions } from "../../../../hooks";
-import { YMaps, Map, Placemark } from "react-yandex-maps";
+import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
+// import { YMaps, Map, Placemark } from "react-yandex-maps";
 
 const AddressSection = (props: any) => {
   const { formData, setFormData } = props;
