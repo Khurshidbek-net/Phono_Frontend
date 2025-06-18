@@ -31,7 +31,7 @@ import {
   ButtonGroup,
   ResetButton,
   ApplyButton,
-} from "./Filter.style"
+} from "../../components/Filter/Filter.style"
 import { useRouter } from "next/router"
 
 export default function FilterComponent() {
