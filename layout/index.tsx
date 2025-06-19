@@ -8,7 +8,7 @@ interface MainLayoutProps {
 }
 const MainLayout: FC<MainLayoutProps> = (props) => {
   return (
-    <MainLayoutWrapper>
+    <MainLayoutWrapper> 
       <Navbar />
       <div>{props.children}</div>
       <Footer />
