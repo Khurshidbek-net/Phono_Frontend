@@ -56,7 +56,7 @@ const Profile: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("http://3.72.3.67:4007/api/phone")
+        const res = await fetch("https://api.agent24.uz/api/phone")
         if (!res.ok) throw new Error("Failed to fetch products")
         const data = await res.json()
 

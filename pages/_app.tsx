@@ -1,3 +1,4 @@
+import Head from "next/head";
 import MainLayout from "@/layout";
 import "@/styles/globals.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -16,7 +17,12 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        {/* <ReduxProvider> */}
+        <Head>
+          <title>Phono Marketplace</title>
+          <meta name="description" content="Phone marketplace" />
+          <link rel="icon" href="/favicon.svg" />
+        </Head>
+
         {shouldShowLayout ? (
           <MainLayout>
             <Component {...pageProps} />
@@ -24,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
         ) : (
           <Component {...pageProps} />
         )}
+
         <ToastContainer
           position="top-right"
           autoClose={3000}
@@ -35,7 +42,6 @@ export default function App({ Component, pageProps }: AppProps) {
           draggable
           pauseOnHover
         />
-        {/* </ReduxProvider> */}
       </AuthProvider>
     </QueryClientProvider>
   );

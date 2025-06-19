@@ -38,7 +38,7 @@ const ProductCard = (props: Phone) => {
     setLiked(!liked);
   };
 
-  console.log(props.Images);
+  // console.log(props.Images);
   return (
     <CardContainerWrapper onClick={props?.onClick}>
       <img className="mainImg" src={props?.Images[0]?.url} alt="" />

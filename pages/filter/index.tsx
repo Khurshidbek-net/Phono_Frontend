@@ -40,7 +40,7 @@ export default function FilterComponent() {
   const router = useRouter()
 
   const handleCloseButton = () => {
-    router.push("/home")
+    router.push("/")
   }
 
   const colors = [
